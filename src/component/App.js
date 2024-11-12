@@ -6,7 +6,7 @@ import Details from './Details'
 export default function App() {
   return (
     <div>
-     <Header/>
+     <Header />
      <Details />
      <Footer />
     </div>
