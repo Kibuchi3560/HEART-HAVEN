@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import './App.css';
 
@@ -127,3 +128,8 @@ const Navbar = () => {
 };
 
 export default Navbar;
+=======
+import React from "react";
+
+export default function Navbar () {}
+>>>>>>> 3865c39 (Third Update)
