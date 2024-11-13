@@ -1,9 +1,13 @@
 import React from 'react'
+import Navbar from './Navbar'
+import './Header.css';
 
 export default function Header() {
   return (
-    <div>
-        <h1>Heart Haven Adoption Services</h1>
-    </div>
+    <header className="header">
+      <h1 className="logo">Heart Haven</h1>
+     <Navbar />
+      <button className="sign-up-btn">Sign Up</button>
+    </header>
   )
 }
