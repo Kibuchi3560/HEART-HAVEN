@@ -1,14 +1,16 @@
 import React from 'react'
-import Header from './Header'
 import Footer from './Footer'
 import Details from './Details'
+import Header from './Header'
+import ChildCard from './ChildCard'
 
 export default function App() {
   return (
     <div>
-     <Header />
-     <Details />
-     <Footer />
+    <Header />
+    <Details />
+    <ChildCard />
+    <Footer />
     </div>
   )
 }
