@@ -5,6 +5,7 @@ import Header from './Header';
 import ChildCard from './ChildCard';
 import AddNewChild from './AddNewChild';  // Keep the import
 import './App.css';
+import Navbar from './Navbar';
 
 export default function App() {
   // State to store children data
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <div>
       <Header />
+     
       <Details />
       {/* Render a list of ChildCard components for each child */}
       <div className="container my-5">
@@ -38,7 +40,7 @@ export default function App() {
           ))}
         </div>
       </div>
-      <AddNewChild onAddChild={handleAddChild} />  {/* Pass handleAddChild as a prop */}
+      <AddNewChild onAddChild={handleAddChild}  />  {/* Pass handleAddChild as a prop */}
       <Footer />
     </div>
   );

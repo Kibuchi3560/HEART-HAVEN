@@ -47,12 +47,11 @@ const SignIn = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // You can replace this with real authentication logic (e.g., API request)
-    if (email === 'user@example.com' && password === 'password123') {
-      setIsAuthenticated(true);
+    
       alert('Signed in successfully!');
-    } else {
-      alert('Invalid credentials');
-    }
+      
+   
+     
   };
 
   return (

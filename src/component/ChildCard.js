@@ -9,9 +9,9 @@ const ChildCard = ({ name, age, image, hobbies, height, county }) => {
   };
 
   return (
-    <div className="card shadow-sm h-100">
+    <div id="child-card" className="card shadow-sm h-100">
       <img 
-        src={image || 'https://via.placeholder.com/300'}  // Use a placeholder image if image is missing
+        src={image || 'https://via.placeholder.com/300'}  
         className="card-img-top" 
         alt={`${name}'s image`} 
         style={{ height: '200px', objectFit: 'cover' }} 
@@ -25,7 +25,7 @@ const ChildCard = ({ name, age, image, hobbies, height, county }) => {
         <button 
           onClick={handleAdoptClick}
           className={`btn ${isAdopted ? 'btn-success' : 'btn-primary'} w-100 mt-3`}
-          disabled={isAdopted} // Disable button after adoption
+          disabled={isAdopted} 
         >
           {isAdopted ? 'Adopted' : 'Adopt'}
         </button>

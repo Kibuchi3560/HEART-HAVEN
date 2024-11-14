@@ -4,12 +4,15 @@ const AddNewChild = () => {
   const [users, setUsers] = useState([]);
   const [childData, setChildData] = useState({
     name: '',
-    description: '',
-    userId: '',  // To associate the child with a user
-    picture: '',  // To store the picture (base64 or file path)
+    age: '',
+    height: '',
+    county: '',
+    hobbies: [],  // Initialize hobbies as an array
+    image: '',    // Allow users to input a URL for the image
   });
   const [loading, setLoading] = useState(false);
-  const [showForm, setShowForm] = useState(false); // New state to toggle form visibility
+  const [showForm, setShowForm] = useState(false);
+  const [hobbyInput, setHobbyInput] = useState('');  // Separate state for the hobby input
 
   // Fetch users from the /users endpoint
   useEffect(() => {
@@ -35,19 +38,27 @@ const AddNewChild = () => {
     });
   };
 
-  // Handle file input change (for picture upload)
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setChildData({
-          ...childData,
-          picture: reader.result, // Save the base64 encoded image
-        });
-      };
-      reader.readAsDataURL(file);
-    }
+  // Handle hobby input change
+  const handleHobbyChange = (e) => {
+    setHobbyInput(e.target.value);
+  };
+
+  // Add a hobby to the hobbies array
+  const addHobby = () => {
+    if (hobbyInput.trim() === '') return;
+    setChildData({
+      ...childData,
+      hobbies: [...childData.hobbies, hobbyInput.trim()],
+    });
+    setHobbyInput('');  // Clear the hobby input after adding
+  };
+
+  // Remove a hobby from the hobbies array
+  const removeHobby = (index) => {
+    setChildData({
+      ...childData,
+      hobbies: childData.hobbies.filter((_, i) => i !== index),
+    });
   };
 
   // Handle form submission
@@ -55,8 +66,8 @@ const AddNewChild = () => {
     e.preventDefault();
 
     // Validate input
-    if (!childData.name || !childData.description || !childData.userId || !childData.picture) {
-      alert('Please fill all fields and upload a picture.');
+    if (!childData.name || !childData.age || !childData.height || !childData.county || childData.hobbies.length === 0 || !childData.image) {
+      alert('Please fill all fields.');
       return;
     }
 
@@ -74,9 +85,11 @@ const AddNewChild = () => {
         alert('Child added successfully!');
         setChildData({
           name: '',
-          description: '',
-          userId: '',
-          picture: '',
+          age: '',
+          height: '',
+          county: '',
+          hobbies: [],
+          image: '',
         }); // Reset form
       } else {
         alert('Failed to add child.');
@@ -91,12 +104,10 @@ const AddNewChild = () => {
 
   return (
     <div className="add-child-container">
-      {/* Button to toggle the form visibility */}
       <button onClick={() => setShowForm(!showForm)}>
         {showForm ? 'Hide Form' : 'Add New Child'}
       </button>
 
-      {/* Form is conditionally rendered based on the showForm state */}
       {showForm && (
         <div className="add-child-form">
           <h2>Add New Child</h2>
@@ -115,43 +126,73 @@ const AddNewChild = () => {
             </div>
 
             <div>
-              <label htmlFor="description">Description</label>
-              <textarea
-                id="description"
-                name="description"
-                value={childData.description}
+              <label htmlFor="age">Age</label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                value={childData.age}
                 onChange={handleChange}
-                placeholder="Enter a description"
+                placeholder="Enter child's age"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="userId">User's Name</label>
-              <select
-                id="userId"
-                name="userId"
-                value={childData.userId}
+              <label htmlFor="height">Height</label>
+              <input
+                type="text"
+                id="height"
+                name="height"
+                value={childData.height}
                 onChange={handleChange}
+                placeholder="Enter child's height"
                 required
-              >
-                <option value="">Select a user</option>
-                {users.map((user) => (
-                  <option key={user.id} value={user.id}>
-                    {user.name}
-                  </option>
-                ))}
-              </select>
+              />
             </div>
 
             <div>
-              <label htmlFor="picture">Upload Picture</label>
+              <label htmlFor="county">County</label>
               <input
-                type="file"
-                id="picture"
-                name="picture"
-                accept="image/*"
-                onChange={handleFileChange}
+                type="text"
+                id="county"
+                name="county"
+                value={childData.county}
+                onChange={handleChange}
+                placeholder="Enter child's county"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="hobbies">Hobbies</label>
+              <input
+                type="text"
+                id="hobbyInput"
+                name="hobbyInput"
+                value={hobbyInput}
+                onChange={handleHobbyChange}
+                placeholder="Enter a hobby and click Add"
+              />
+              <button type="button" onClick={addHobby}>Add Hobby</button>
+              <ul>
+                {childData.hobbies.map((hobby, index) => (
+                  <li key={index}>
+                    {hobby} <button type="button" onClick={() => removeHobby(index)}>Remove</button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <label htmlFor="image">Image URL</label>
+              <input
+                type="text"
+                id="image"
+                name="image"
+                value={childData.image}
+                onChange={handleChange}
+                placeholder="Enter image URL"
                 required
               />
             </div>

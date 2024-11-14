@@ -1,10 +1,9 @@
-
 import React from 'react';
 import './Footer.css';
 
 export default function Footer() {
   return (
-    <section className="footer-section">
+    <section id="footer" className="footer-section">
       <div className="footer-content">
         <div className="footer-column">
           <h2>Adoption Center Location</h2>
