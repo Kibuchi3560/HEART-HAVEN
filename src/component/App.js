@@ -10,6 +10,7 @@ export default function App() {
     <Header />
     <Details />
     <ChildCard />
+    <AddNewChild />
     <Footer />
     </div>
   )
