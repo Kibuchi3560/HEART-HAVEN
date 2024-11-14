@@ -1,13 +1,16 @@
-import React from 'react';
-import ChildList from './ChildList'; 
+import React from 'react'
+import Footer from './Footer'
+import Details from './Details'
+import Header from './Header'
+import ChildCard from './ChildCard'
 
 export default function App() {
   return (
     <div>
-      
-      
-      <ChildList /> 
-    
+    <Header />
+    <Details />
+    <ChildCard />
+    <Footer />
     </div>
-  );
+  )
 }
