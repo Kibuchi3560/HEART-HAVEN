@@ -1,21 +1,18 @@
-import React from 'react';
-import Header from './Header';
-import './App.css'
-import Navbar from './Navbar';
+import React from 'react'
+import Footer from './Footer'
+import Details from './Details'
+import Header from './Header'
+import ChildCard from './ChildCard'
+import AddNewChild from './AddNewChild'
 
-import AddNewChild from './AddNewChild';
-const App = () => {
-  console.log("App Component Rendered");
+export default function App() {
   return (
-    <div className='App'>
-      <Header />
-       
-      <AddNewChild />
-      <Navbar />
-      
-      
-    </div>  
-  );
-};
-
-export default App;
+    <div>
+    <Header />
+    <Details />
+    <ChildCard />
+    <AddNewChild/>
+    <Footer />
+    </div>
+  )
+}

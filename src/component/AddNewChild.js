@@ -8,8 +8,8 @@ const AddNewChild = () => {
     userId: '',  // To associate the child with a user
     picture: '',  // To store the picture (base64 or file path)
   });
-
   const [loading, setLoading] = useState(false);
+  const [showForm, setShowForm] = useState(false); // New state to toggle form visibility
 
   // Fetch users from the /users endpoint
   useEffect(() => {
@@ -90,70 +90,80 @@ const AddNewChild = () => {
   };
 
   return (
-    <div className="add-child-form">
-      <h2>Add New Child</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Child Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={childData.name}
-            onChange={handleChange}
-            placeholder="Enter child's name"
-            required
-          />
-        </div>
+    <div className="add-child-container">
+      {/* Button to toggle the form visibility */}
+      <button onClick={() => setShowForm(!showForm)}>
+        {showForm ? 'Hide Form' : 'Add New Child'}
+      </button>
 
-        <div>
-          <label htmlFor="description">Description</label>
-          <textarea
-            id="description"
-            name="description"
-            value={childData.description}
-            onChange={handleChange}
-            placeholder="Enter a description"
-            required
-          />
-        </div>
+      {/* Form is conditionally rendered based on the showForm state */}
+      {showForm && (
+        <div className="add-child-form">
+          <h2>Add New Child</h2>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="name">Child Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={childData.name}
+                onChange={handleChange}
+                placeholder="Enter child's name"
+                required
+              />
+            </div>
 
-        <div>
-          <label htmlFor="userId">users name</label>
-          <select
-            id="userId"
-            name="userId"
-            value={childData.userId}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select a user</option>
-            {users.map((user) => (
-              <option key={user.id} value={user.id}>
-                {user.name}
-              </option>
-            ))}
-          </select>
-        </div>
+            <div>
+              <label htmlFor="description">Description</label>
+              <textarea
+                id="description"
+                name="description"
+                value={childData.description}
+                onChange={handleChange}
+                placeholder="Enter a description"
+                required
+              />
+            </div>
 
-        <div>
-          <label htmlFor="picture">Upload Picture</label>
-          <input
-            type="file"
-            id="picture"
-            name="picture"
-            accept="image/*"
-            onChange={handleFileChange}
-            required
-          />
-        </div>
+            <div>
+              <label htmlFor="userId">User's Name</label>
+              <select
+                id="userId"
+                name="userId"
+                value={childData.userId}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select a user</option>
+                {users.map((user) => (
+                  <option key={user.id} value={user.id}>
+                    {user.name}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-        <div>
-          <button type="submit" disabled={loading}>
-            {loading ? 'Submitting...' : 'Add Child'}
-          </button>
+            <div>
+              <label htmlFor="picture">Upload Picture</label>
+              <input
+                type="file"
+                id="picture"
+                name="picture"
+                accept="image/*"
+                onChange={handleFileChange}
+                required
+              />
+            </div>
+
+            <div>
+              <button type="submit" disabled={loading}>
+                {loading ? 'Submitting...' : 'Add Child'}
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
+      )}
     </div>
   );
 };
