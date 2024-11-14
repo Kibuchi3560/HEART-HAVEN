@@ -15,7 +15,7 @@ const AddNewChild = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:3000/users');
+        const response = await fetch('http://localhost:5000/users');
         const data = await response.json();
         setUsers(data);
       } catch (error) {
@@ -62,7 +62,7 @@ const AddNewChild = () => {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3000/child', {
+      const response = await fetch('http://localhost:5000/child', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
