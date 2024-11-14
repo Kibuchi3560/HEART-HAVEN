@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# HEART HAVEN
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React application designed for a children adoption center . It provides an interactive interface for users interested in adopting children, with details on available children, the services offered, contact information, and more.
 
-## Available Scripts
+### About
 
-In the project directory, you can run:
+Display Children Available for adoption
+Each Child's Details eg: Name,Age,Height,County,Hobbies and Image
+A Sign Up Form For The user
+A Form that fills Data for Housing The Lost child
+The Heart Haven's Abouts And Location
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+Project Structure
+Components
+Details Component
+Footer Component
+ChildCard Component
+ChildList Component
+Navbar Component
+AddNewChild Component
+App Component
+Installation
+Usage
+API Requirements(db.json)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Details Component
 
-### `npm run build`
+File: Details.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Details component provides information about the services offered by the adoption center. It includes a title, a list of services, and an image.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+CSS File: Details.css
+Image File: motherchild.jpg , image2.jpg
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Footer Component
 
-### `npm run eject`
+The Footer component displays contact information, operating hours, and a note for adopters. It organizes information in a structured layout for easy access.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+CSS File: Footer.css
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### ChildCard Component
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+File: ChildCard.js
 
-## Learn More
+The ChildCard component displays detailed information about each child available for adoption. Each card includes the child’s name, age, height, county, hobbies, and an "Adopt" button.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+CSS File: ChildCard.css
+Props:
+name - The name of the child.
+age - The age of the child.
+height - Height of the child.
+county - County of residence.
+hobbies - List of hobbies.
+image - Profile picture of the child.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### ChildList Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+File: ChildList.js
 
-### Analyzing the Bundle Size
+The ChildList component fetches a list of children from a backend API (JSON server) and renders each child’s details using the ChildCard component. It handles loading and error states as well.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Displays: List of children available for adoption.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### Navbar Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+File : Navbar.js
 
-### Deployment
+The Navbar component contains links of:
+Home
+About us
+Adopt a Child
+Add New Child
+Contacts
+Sign in
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+### AddNewChild Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+File : AddNewChild.js
+
+This component it is used for filling up the form for Adding a new child for catering home to the Homeless Souls
+
+
+### App Component
+
+This is the Main Component that Houses he other components
+
+### Json data
+
+File : db.json
+
+It houses the local Api used 
+
+### Technologies used
+React , Bootstrap
+
+### Acknowledgements
+
+First: Project Backend that provides the kid's endpoint data.
+Secondly : The Three GitHub collaborators
+        Kibuchi : https://github.com/Kibuchi3560 
+        Ian : https://github.com/Skian9299
+        Kevin : https://github.com/bogeylab99

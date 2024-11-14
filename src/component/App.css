@@ -1,0 +1,320 @@
+Basic CSS for Header and Navigation
+.header-container {
+  font-family: Arial, sans-serif;
+}
+
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  
+}
+
+.header-container .logo h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.nav-links li a:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+
+/* Content Container */
+.content-container {
+  margin: 20px;
+}
+
+/* SignIn Form Styles */
+.signin-form form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signin-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signin-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signin-form button:hover {
+  background-color: #45a049;
+}
+
+/* General body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  background-color:burlywood;
+  
+}
+
+/* Details container styling */
+.details-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: auto; /* Pushes the section to the bottom of the page */
+  margin-bottom: 10px; /* Adds a bit of space at the bottom */
+  border-top: 2px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Heading styles */
+.details-container h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #4CAF50; /* A soft green for the headings */
+  margin-bottom: 10px;
+}
+
+/* Paragraph and list styling */
+.details-container p,
+.details-container ul {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* List items in the "Services Offered" section */
+.details-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.details-container ul li {
+  margin-bottom: 8px;
+}
+
+/* Styling for strong tags inside the list */
+.details-container ul li strong {
+  color: #4CAF50; /* Matching green for emphasis */
+}
+
+/* Minimal spacing between paragraphs */
+.details-container p {
+  margin-bottom: 15px;
+}
+
+button{
+  position:relative;
+  
+}
+/* Wrapper for the page */
+.page-container {
+  position: relative; /* Set the parent container to relative positioning */
+  flex-grow: 1;
+}
+
+/* Details container styling */
+.details-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: auto; /* Pushes the section to the bottom of the page */
+  margin-bottom: 10px; /* Adds a bit of space at the bottom */
+  border-top: 2px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Button at top-left */
+.button {
+  position: absolute;
+  top: 20px; /* Distance from the top */
+  left: 20px; /* Distance from the left */
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 100; /* Ensure the button is always on top */
+}
+
+.button:hover {
+  background-color: #060706;
+}
+
+/* Heading styles */
+.details-container h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #4CAF50; /* A soft green for the headings */
+  margin-bottom: 10px;
+}
+
+/* Paragraph and list styling */
+.details-container p,
+.details-container ul {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* List items in the "Services Offered" section */
+.details-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.details-container ul li {
+  margin-bottom: 8px;
+}
+
+/* Styling for strong tags inside the list */
+.details-container ul li strong {
+  color: #4CAF50; /* Matching green for emphasis */
+}
+
+/* Minimal spacing between paragraphs */
+.details-container p {
+  margin-bottom: 15px;
+}
+/* Styling for centering the card container on the page */
+.child-card-container {
+  top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: top;
+  align-items: center;
+  margin: 50px;
+}
+
+/* Styling for each card */
+.card {
+  width: 250px;
+  margin: 15px;
+  padding: 50px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(201, 173, 173);
+  transition: transform 0.3s ease-in-out;
+  top: 20px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  margin: 0;
+  color: #333;
+}
+
+.card p {
+  color: #666;
+}
+
+.user-info {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.user-info h4 {
+  margin: 0;
+  color: #555;
+}
+.add-child-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.add-child-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-child-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-child-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.add-child-form input,
+.add-child-form textarea,
+.add-child-form select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.add-child-form button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-child-form button:disabled {
+  background-color: #ccc;
+}
